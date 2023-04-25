@@ -17,26 +17,35 @@
         <header>
             <section class="top-bar">
                 <div class="logo">
-
+                    Logo
                 </div>
                 <div class="searchbox">
-
+                    SearchBox
                 </div>
             </section>
             <section class="menu-area">
-                <nav class="main-menu"></nav>
+                <nav class="main-menu">
+                    Menu
+                </nav>
             </section>
         </header>
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
-                    <section class="hero"></section>
-                    <section class="services"></section>
-                    <section class="home-blog"></section>
+                    <section class="hero">
+                        Hero
+                    </section>
+                    <section class="services">
+                        Services</section>
+                    <section class="home-blog">
+                        Home-Blog
+                    </section>
                 </main>
             </div>
         </div>
-        <footer class="site-footer"></footer>
+        <footer class="site-footer">
+            Footer
+        </footer>
     </div>
 </body>
 
