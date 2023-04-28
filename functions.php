@@ -24,5 +24,11 @@ function wpedvs_config()
     );
     add_theme_support('custom-header', $args);
     add_theme_support('post-thumbnails');
+    add_theme_support('custom-logo', array(
+        'width' => 200,
+        'height' => 110,
+        'flex-height' => true,
+        'flex-width' => true
+    ));
 }
 add_action('after_setup_theme', 'wpedvs_config', 0);
