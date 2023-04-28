@@ -32,3 +32,19 @@ function wpedvs_config()
     ));
 }
 add_action('after_setup_theme', 'wpedvs_config', 0);
+add_action('widgets_init', 'wpedvs_sidebars');
+
+function wpedvs_sidebars()
+{
+    register_sidebar(
+        array(
+            'name' => 'Blog Sidebar',
+            'id' => 'sidebar-blog',
+            'description' => 'this is the Blog Sidebar. You can add your own widgets here.',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-tittle">',
+            'after_title' => '</h4>',
+        )
+    );
+}
