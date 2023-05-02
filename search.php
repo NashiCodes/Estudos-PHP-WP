@@ -3,8 +3,10 @@
 <div id="primary">
    <div id="main">
       <div class="container">
-
-         <?php while (have_posts()) :
+         <h1>Search results for: <?php echo get_search_query(); ?></h1>
+         <?php
+         get_search_form();
+         while (have_posts()) :
             the_post();
          ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
@@ -21,7 +23,9 @@
                </div>
             </article>
          <?php
-         endwhile; ?>
+         endwhile;
+         the_posts_pagination();
+         ?>
       </div>
    </div>
 </div>

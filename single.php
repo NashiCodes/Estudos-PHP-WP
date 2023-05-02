@@ -3,12 +3,7 @@
 <div id="primary">
    <div id="main">
       <div class="container">
-         <h1>Search results for: <?php echo get_search_query(); ?></h1>
-
          <?php
-
-         get_search_form();
-
          while (have_posts()) :
             the_post();
          ?>
@@ -22,9 +17,20 @@
                   </div>
                </header>
                <div class="content">
-                  <?php the_content(); ?>
+                  <?php
+                  the_content();
+                  wp_link_pages();
+                  ?>
                </div>
             </article>
+            <div class="wpdevs-pagination">
+               <div class="pages next">
+                  <?php next_post_link('&laquo; %link'); ?>
+               </div>
+               <div class="pages previous">
+                  <?php previous_post_link('%link &raquo;'); ?>
+               </div>
+            </div>
          <?php
             if (comments_open() || get_comments_number()) {
                comments_template();
