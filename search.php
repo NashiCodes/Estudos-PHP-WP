@@ -3,18 +3,13 @@
 <div id="primary">
    <div id="main">
       <div class="container">
-         <h1>Search results for: <?php echo get_search_query(); ?></h1>
 
-         <?php
-
-         get_search_form();
-
-         while (have_posts()) :
+         <?php while (have_posts()) :
             the_post();
          ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
                <header>
-                  <h1><?php the_title(); ?></h1>
+                  <h2> <a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
                   <div class="meta-info">
                      <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?></p>
                      <p>Categories: <?php the_category(' '); ?></p>
@@ -22,15 +17,11 @@
                   </div>
                </header>
                <div class="content">
-                  <?php the_content(); ?>
+                  <?php the_excerpt(); ?>
                </div>
             </article>
          <?php
-            if (comments_open() || get_comments_number()) {
-               comments_template();
-            }
          endwhile; ?>
-
       </div>
    </div>
 </div>
