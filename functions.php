@@ -47,4 +47,37 @@ function wpedvs_sidebars()
             'after_title' => '</h4>',
         )
     );
+    register_sidebar(
+        array(
+            'name' => 'Services 1',
+            'id' => 'services-1',
+            'description' => 'First Service Area.',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-tittle">',
+            'after_title' => '</h4>',
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Services 2',
+            'id' => 'services-2',
+            'description' => 'Second Service Area.',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-tittle">',
+            'after_title' => '</h4>',
+        )
+    );
+    register_sidebar(
+        array(
+            'name' => 'Services 3',
+            'id' => 'services-3',
+            'description' => 'Third Service area ',
+            'before_widget' => '<div class="widget-wrapper">',
+            'after_widget' => '</div>',
+            'before_title' => '<h4 class="widget-tittle">',
+            'after_title' => '</h4>',
+        )
+    );
 }
