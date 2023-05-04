@@ -30,6 +30,7 @@ function wpedvs_config()
         'flex-height' => true,
         'flex-width' => true
     ));
+    add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'wpedvs_config', 0);
 add_action('widgets_init', 'wpedvs_sidebars');

@@ -3,30 +3,26 @@
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <section class="home-blog">
-                <div class="container">
-                    <div class="page-item">
-                        <?php
-                        while (have_posts()) : the_post();
-                        ?>
-                            <article>
-                                <header>
-                                    <h1><?php the_title(); ?></h1>
-                                </header>
-                                <?php
-                                the_content();
-                                wp_link_pages();
-                                ?>
-                            </article>
-                        <?php
-                            if (comments_open() || get_comments_number()) {
-                                comments_template();
-                            }
-                        endwhile;
-                        ?>
-                    </div>
+            <div class="container">
+                <div class="page-item">
+                    <?php while (have_posts()) : the_post(); ?>
+                        <article>
+                            <header>
+                                <h1><?php the_title(); ?></h1>
+                            </header>
+                            <?php
+                            the_content();
+                            wp_link_pages();
+                            ?>
+                        </article>
+                    <?php
+                        if (comments_open() || get_comments_number()) {
+                            comments_template();
+                        }
+                    endwhile;
+                    ?>
                 </div>
-            </section>
+            </div>
         </main>
     </div>
 </div>
