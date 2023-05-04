@@ -31,6 +31,8 @@ function wpedvs_config()
         'flex-width' => true
     ));
     add_theme_support('title-tag');
+    add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
+    add_theme_support('automatic-feed-links');
 }
 add_action('after_setup_theme', 'wpedvs_config', 0);
 add_action('widgets_init', 'wpedvs_sidebars');
@@ -81,4 +83,12 @@ function wpedvs_sidebars()
             'after_title' => '</h4>',
         )
     );
+}
+
+
+if (!function_exists('wp_body_open')) {
+    function wp_body_open()
+    {
+        do_action('wp_body_open');
+    }
 }
