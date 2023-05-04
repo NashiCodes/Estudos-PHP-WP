@@ -3,13 +3,22 @@
 <div id="content" class="site-content">
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <section class="hero" style="background-image: url('http://wp-devs.local/wp-content/uploads/2023/05/pexels-lumn-167699-scaled.jpeg')">
-                <div class="overlay" style="min-height: 800px;">
+            <?php
+            $hero_title = get_theme_mod('set_hero_title', 'Please, type some title');
+            $hero_subtitle = get_theme_mod('set_hero_subtitle', 'Please, type some subtitle');
+            $hero_button_link = get_theme_mod('set_hero_button_link', '#');
+            $hero_button_text = get_theme_mod('set_hero_button_text', 'Learn more');
+            $hero_height = get_theme_mod('set_hero_height', 800);
+            $hero_background = wp_get_attachment_url(get_theme_mod('set_hero_background'))
+
+            ?>
+            <section class="hero" style="background-image: url('<?php echo $hero_background ?>')">
+                <div class="overlay" style="min-height: <?php echo $hero_height ?>px;">
                     <div class="container">
                         <div class="hero-items">
-                            <h1>Lorem ipsum dolor.</h1>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro aperiam, fuga ea eius ullam dolorem earum eos aliquid, possimus harum sequi fugit impedit.</p>
-                            <a href="#">Learn More</a>
+                            <h1><?php echo $hero_title ?></h1>
+                            <p><?php echo nl2br($hero_subtitle) ?></p>
+                            <a href="<?php $hero_button_link ?>"><?php echo $hero_button_text ?></a>
                         </div>
                     </div>
                 </div>
