@@ -13,6 +13,9 @@ add_action('wp_enqueue_scripts', 'wpdevs_load_scripts');
 
 function wpedvs_config()
 {
+    $textdomain = 'wp-devs';
+    load_theme_textdomain($textdomain, get_template_directory() . '/languages/');
+
     register_nav_menus(
         array(
             'wp_devs_main_menu' => 'Main Menu',
