@@ -4,24 +4,24 @@
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <section class="home-blog">
-                <h1>Blog</h1>
+                <h1><?php _e('Blog', 'wp-devs') ?></h1>
                 <div class="container">
                     <div class="blog-items">
                         <?php
                         if (have_posts()) :
                             while (have_posts()) : the_post();
-                            get_template_part('parts/content');
+                                get_template_part('parts/content');
                             endwhile;
-                            ?>
+                        ?>
                             <div class="wpdevs-pagination">
                                 <div class="pages new">
-                                    <?php previous_posts_link("<< Newer posts"); ?>
+                                    <?php previous_posts_link("<<" . __("Newer posts", 'wp-devs')); ?>
                                 </div>
-                                <div class="pages old"><?php next_posts_link("Older posts >>"); ?></div>
+                                <div class="pages old"><?php next_posts_link(__('Older posts', 'wp-devs') . " >>"); ?></div>
                             </div>
                         <?php
                         else : ?>
-                            <p>Nothing yet to be displayed</p>
+                            <p><?php _e('Nothing yet to be displayed', 'wp-devs') ?></p>
                         <?php endif; ?>
                     </div>
                     <?php get_sidebar() ?>
